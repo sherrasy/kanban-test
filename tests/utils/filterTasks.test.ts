@@ -1,4 +1,4 @@
-import { filterTasks } from './filterTasks';
+import { filterTasks } from '@/utils/filterTasks';
 import type { Task } from '@/types/Task';
 
 const makeTask = (id: number, text: string, startDay: number, endDay: number): Task => ({

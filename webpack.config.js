@@ -68,6 +68,10 @@ module.exports = (env, argv) => {
         test: /\.svg$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(png|jpe?g|webp|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [

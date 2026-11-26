@@ -1,4 +1,4 @@
-import { isOverdue } from './isOverdue';
+import { isOverdue } from '@/utils/isOverdue';
 import type { Task } from '@/types/Task';
 
 const NOW = new Date(2025, 0, 10, 15, 30).getTime();

@@ -1,4 +1,4 @@
-import { readTasksFromStorage } from './taskStorage';
+import { readTasksFromStorage } from '@/utils/taskStorage';
 
 const validTask = {
   id: 1,

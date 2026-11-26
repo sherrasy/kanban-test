@@ -1,4 +1,5 @@
 import React from 'react';
+import { SearchIcon } from '@/components/icons/SearchIcon';
 import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
@@ -9,10 +10,13 @@ interface SearchBarProps {
 export const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
   return (
     <div className={styles.wrapper}>
+      <span className={styles.icon}>
+        <SearchIcon />
+      </span>
       <input
         type="search"
         className={styles.input}
-        placeholder="Поиск по тексту или дате (dd.mm.yyyy)"
+        placeholder="поиск..."
         aria-label="Поиск задач"
         value={value}
         onChange={(e) => onChange(e.target.value)}

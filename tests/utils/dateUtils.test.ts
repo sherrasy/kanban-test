@@ -1,4 +1,4 @@
-import { formatDate, parseDate } from './dateUtils';
+import { formatDate, parseDate } from '@/utils/dateUtils';
 
 describe('formatDate', () => {
   it('formats ms timestamp as dd.mm.yyyy with zero padding', () => {
