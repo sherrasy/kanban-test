@@ -7,3 +7,7 @@ declare module '*.svg' {
   const src: string;
   export default src;
 }
+declare module '@/data/tasks.json' {
+  const url: string;
+  export default url;
+}

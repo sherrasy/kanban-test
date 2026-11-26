@@ -7,6 +7,7 @@ module.exports = {
     '\\.module\\.css$': 'identity-obj-proxy',
     '\\.css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/src/test/__mocks__/fileMock.ts',
+    'tasks\\.json$': '<rootDir>/src/test/__mocks__/jsonUrlMock.ts',
   },
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }],

@@ -57,6 +57,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /tasks\.json$/i,
+        type: 'asset/resource',
+      },
+      {
         test: /\.svg$/i,
         type: 'asset/resource',
       },
