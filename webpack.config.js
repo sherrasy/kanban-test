@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const isDev = process.env.NODE_ENV !== 'production';
+module.exports = (env, argv) => {
+  const isDev = argv.mode !== 'production';
 
-module.exports = {
+  return {
   mode: isDev ? 'development' : 'production',
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
@@ -30,7 +31,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: 'defaults' }],
+              ['@babel/preset-env', { targets: 'defaults', modules: false }],
               ['@babel/preset-react', { runtime: 'automatic' }],
               '@babel/preset-typescript',
             ],
@@ -45,7 +46,10 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: { localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]' },
+              modules: {
+                namedExport: false,
+                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
+              },
               importLoaders: 1,
             },
           },
@@ -81,4 +85,5 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
   },
+  };
 };

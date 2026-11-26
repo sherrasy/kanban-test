@@ -35,7 +35,7 @@ export const readTasksFromStorage = (): Task[] | null => {
       return null;
     }
     const parsed: unknown = JSON.parse(raw);
-    return isTaskArray(parsed) ? parsed : null;
+    return isTaskArray(parsed) && parsed.length > 0 ? parsed : null;
   } catch {
     return null;
   }

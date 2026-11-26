@@ -1,0 +1,11 @@
+:root {
+  --color-text-bold: rgba(255, 255, 255, 0.87);
+  --color-text-regular: rgba(255, 255, 255, 0.6);
+  --color-accent-red: rgba(252, 54, 57, 0.6);
+  --color-accent-blue: #0184cf;
+  --color-surface: rgba(0, 0, 0, 0.7);
+  --color-surface-raised: rgba(255, 255, 255, 0.1);
+  --color-secondary: rgba(255, 255, 255, 0.08);
+  --color-secondary-strong: rgba(255, 255, 255, 0.2);
+  --color-page-bg: #141414;
+}

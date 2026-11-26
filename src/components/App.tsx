@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTasks } from '@/hooks/useTasks';
-import { formatDate } from '@/utils/dateUtils';
+import { Board } from '@/components/Board';
 
 export const App: React.FC = () => {
-  const { tasks, isLoading, error } = useTasks();
+  const { tasks, setTasks, isLoading, error } = useTasks();
 
   if (isLoading) {
     return <p>Загрузка…</p>;
@@ -13,16 +13,13 @@ export const App: React.FC = () => {
     return <p role="alert">Ошибка загрузки задач: {error}</p>;
   }
 
+  const handleDelete = (id: number): void => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  };
+
   return (
     <main>
-      <h1>Kanban Board</h1>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            [{task.type}] {task.text} — {formatDate(task.startDay)} – {formatDate(task.endDay)}
-          </li>
-        ))}
-      </ul>
+      <Board tasks={tasks} onDelete={handleDelete} />
     </main>
   );
 };
