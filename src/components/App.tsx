@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTasks } from '@/hooks/useTasks';
+import { filterTasks } from '@/utils/filterTasks';
 import { Board } from '@/components/Board';
+import { SearchBar } from '@/components/SearchBar';
 
 export const App: React.FC = () => {
   const { tasks, setTasks, isLoading, error } = useTasks();
+  const [query, setQuery] = useState('');
 
   if (isLoading) {
     return <p>Загрузка…</p>;
@@ -19,7 +22,8 @@ export const App: React.FC = () => {
 
   return (
     <main>
-      <Board tasks={tasks} onDelete={handleDelete} />
+      <SearchBar value={query} onChange={setQuery} />
+      <Board tasks={filterTasks(tasks, query)} onDelete={handleDelete} />
     </main>
   );
 };
