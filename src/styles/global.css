@@ -1,0 +1,20 @@
+@import './vars.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-page-bg);
+  background-image: url('../assets/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-text-bold);
+}
+
+#root {
+  min-height: 100vh;
+}
